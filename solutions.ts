@@ -6,8 +6,8 @@ const reverseString = (str: string): string => {
   return str.split("").reduce((reversed, char) => char + reversed, "");
 };
 
-type stringOrNumber = string | number;
-const checkType = (value: stringOrNumber): string => {
+type StringOrNumber = string | number;
+const checkType = (value: StringOrNumber): string => {
   if (typeof value === "string") {
     return "String";
   } else {
@@ -15,7 +15,7 @@ const checkType = (value: stringOrNumber): string => {
   }
 };
 
-const getProperty = <T, key extends keyof T>(obj: T, key: key) => {
+const getProperty = <T, K extends keyof T>(obj: T, key: K): T[K] => {
   return obj[key];
 };
 
